@@ -6,6 +6,8 @@ public class MyFirstProgram {
     hello("World");
     hello("user");
     hello("Irina");
+    hello("Maria");
+
 
   }
 
