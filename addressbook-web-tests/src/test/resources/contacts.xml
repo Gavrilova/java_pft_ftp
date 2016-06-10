@@ -1,0 +1,53 @@
+<list>
+  <contact>
+    <firstname>name 0</firstname>
+    <middlename>middlename 0</middlename>
+    <lastname>lastname 0</lastname>
+    <nickname>nickname 0</nickname>
+    <title>title 0</title>
+    <address>address 0</address>
+    <company>company 0</company>
+    <homePhone>homePhone 0</homePhone>
+    <mobilePhone>mobilePhone 0</mobilePhone>
+    <workPhone>workPhone 0</workPhone>
+    <fax>fax 0</fax>
+    <email2>emailSecond 0</email2>
+    <email3>emailThird 0</email3>
+    <homepage>homepage 0</homepage>
+    <group>test1</group>
+  </contact>
+  <contact>
+    <firstname>name 1</firstname>
+    <middlename>middlename 1</middlename>
+    <lastname>lastname 1</lastname>
+    <nickname>nickname 1</nickname>
+    <title>title 1</title>
+    <address>address 1</address>
+    <company>company 1</company>
+    <homePhone>homePhone 1</homePhone>
+    <mobilePhone>mobilePhone 1</mobilePhone>
+    <workPhone>workPhone 1</workPhone>
+    <fax>fax 1</fax>
+    <email2>emailSecond 1</email2>
+    <email3>emailThird 1</email3>
+    <homepage>homepage 1</homepage>
+    <group>test1</group>
+  </contact>
+  <contact>
+    <firstname>name 2</firstname>
+    <middlename>middlename 2</middlename>
+    <lastname>lastname 2</lastname>
+    <nickname>nickname 2</nickname>
+    <title>title 2</title>
+    <address>address 2</address>
+    <company>company 2</company>
+    <homePhone>homePhone 2</homePhone>
+    <mobilePhone>mobilePhone 2</mobilePhone>
+    <workPhone>workPhone 2</workPhone>
+    <fax>fax 2</fax>
+    <email2>emailSecond 2</email2>
+    <email3>emailThird 2</email3>
+    <homepage>homepage 2</homepage>
+    <group>test1</group>
+  </contact>
+</list>

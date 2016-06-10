@@ -1,0 +1,53 @@
+[
+  {
+    "firstname": "name 0",
+    "middlename": "middlename 0",
+    "lastname": "lastname 0",
+    "nickname": "nickname 0",
+    "title": "title 0",
+    "address": "address 0",
+    "company": "company 0",
+    "homePhone": "homePhone 0",
+    "mobilePhone": "mobilePhone 0",
+    "workPhone": "workPhone 0",
+    "fax": "fax 0",
+    "email2": "emailSecond 0",
+    "email3": "emailThird 0",
+    "homepage": "homepage 0",
+    "group": "test1"
+  },
+  {
+    "firstname": "name 1",
+    "middlename": "middlename 1",
+    "lastname": "lastname 1",
+    "nickname": "nickname 1",
+    "title": "title 1",
+    "address": "address 1",
+    "company": "company 1",
+    "homePhone": "homePhone 1",
+    "mobilePhone": "mobilePhone 1",
+    "workPhone": "workPhone 1",
+    "fax": "fax 1",
+    "email2": "emailSecond 1",
+    "email3": "emailThird 1",
+    "homepage": "homepage 1",
+    "group": "test1"
+  },
+  {
+    "firstname": "name 2",
+    "middlename": "middlename 2",
+    "lastname": "lastname 2",
+    "nickname": "nickname 2",
+    "title": "title 2",
+    "address": "address 2",
+    "company": "company 2",
+    "homePhone": "homePhone 2",
+    "mobilePhone": "mobilePhone 2",
+    "workPhone": "workPhone 2",
+    "fax": "fax 2",
+    "email2": "emailSecond 2",
+    "email3": "emailThird 2",
+    "homepage": "homepage 2",
+    "group": "test1"
+  }
+]
