@@ -20,6 +20,7 @@ public HelperBase (ApplicationManager app) {
   protected void click (By locator) {
     wd.findElement(locator).click();
   }
+
   protected void type (By locator, String text) {
     click(locator);
     if (text !=null){
