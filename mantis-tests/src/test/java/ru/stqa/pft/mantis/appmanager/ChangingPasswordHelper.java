@@ -24,27 +24,20 @@ public class ChangingPasswordHelper extends HelperBase {
     type(By.name("password_confirm"), password);
     click(By.cssSelector("input[value='Update User']"));
   }
+
   public void goToManageUserPage() {
 
     click(By.xpath("//div[2]/p/span[1]/a"));
   }
+
   public void select(int id) { //id gets from table `mantis_user_table` in DB;
-  click(By.xpath(String.format("/html/body/table[3]/tbody/tr[%s]/td[1]/a",(2+id))));
-}
- // public void select(String username) {
- //   click(By.xpath(String.format("//a[.='%s'])", username)));
- // }
+    click(By.xpath(String.format("/html/body/table[3]/tbody/tr[%s]/td[1]/a", (2 + id))));
+  }
+
 
   public void resetPasword() {
-    click(By.cssSelector("input[value='Reset Password']"));;
+    click(By.cssSelector("input[value='Reset Password']"));
   }
-/*
-  public void reset(String resetLink, String password) {
-    wd.get(resetLink);
-    type(By.name("password"), password);
-    type(By.name("passwordChanged"), password);
-    click(By.cssSelector("input[value='Update User']"));
-  }
-  */
+
 
 }

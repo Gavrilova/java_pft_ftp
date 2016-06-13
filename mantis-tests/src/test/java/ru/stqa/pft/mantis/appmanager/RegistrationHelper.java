@@ -9,10 +9,11 @@ public class RegistrationHelper extends HelperBase { //этому помощни
 
   public RegistrationHelper(ApplicationManager app) {
     super(app);
-   // wd = app.wd; //просим ссылку на driver у ApplicationManager //меняем на ленивую инициализацию
+    // wd = app.wd; //просим ссылку на driver у ApplicationManager //меняем на ленивую инициализацию
     // wd = app.getDriver();метод будет инициализировать driver в момент первого обращения
   }
-  public void start (String username, String email) {
+
+  public void start(String username, String email) {
     wd.get(app.getProperty("web.baseUrl") + "/signup_page.php");
     type(By.name("username"), username);
     type(By.name("email"), email);

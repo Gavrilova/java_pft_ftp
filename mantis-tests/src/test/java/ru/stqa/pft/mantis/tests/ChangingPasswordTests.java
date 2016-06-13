@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 import ru.lanwen.verbalregex.VerbalExpression;
 import ru.stqa.pft.mantis.appmanager.HttpSession;
 import ru.stqa.pft.mantis.model.MailMessage;
+import ru.stqa.pft.mantis.model.UserData;
+import ru.stqa.pft.mantis.model.Users;
 
 import javax.mail.MessagingException;
 import java.io.IOException;
@@ -26,28 +28,28 @@ public class ChangingPasswordTests extends TestBase{
   @Test
   public void testRegistration() throws InterruptedException, MessagingException, IOException {
     app.change().login("administrator", "root");  //enter to MantisBT as administrator using GUI
-    app.change().goToManageUserPage();            //go to the page Manage Users
-    String user = "user1";
-    String password = "password";
-    String password1 = "password";
-    String email  = "user1@localhost.localdomain";  //need to get password for user in DB
-    app.change().select(2);                         //choosing user by name or by id
+    app.change().goToManageUserPage();//go to the page Manage Users
+    long currentTimeMillis = System.currentTimeMillis();
+    String password1 = "password" + currentTimeMillis;
+    System.out.println("password is changed to: " + password1);
+    Users users = app.db().users();
+    UserData randomUser = users.stream()
+            .filter(( u ) -> ! u.getUsername().equals("administrator")).iterator().next();
+    app.change().select(randomUser.getId());                         //choosing user by id
     app.change().resetPasword();                    //Reset Password sends the confirmation URL via e-mail.
 
     List<MailMessage> mailMessages = app.mail().waitForMail(1, 10000);
-    String resetLink = findResetPasswordLink(mailMessages, email);
+    String resetLink = findResetPasswordLink(mailMessages, randomUser.getEmail());
     System.out.println("resetLink = " + resetLink);
     app.change().resetPassword(resetLink, password1);
 
     HttpSession session = app.newSession();
-    assertTrue(session.login(user, password1));
-    assertTrue(session.isLogicInAs(user));
+    assertTrue(session.login(randomUser.getUsername(), password1));
+    assertTrue(session.isLogicInAs(randomUser.getUsername()));
   }
 
   private String findResetPasswordLink(List<MailMessage> mailMessages, String email) {
     MailMessage mailMessage = mailMessages.stream().filter((m) -> m.to.equals(email)).findFirst().get();
-    System.out.println("mailMessage.text" + mailMessage.text);
-    System.out.println("VerbalExpression.regex() = " + VerbalExpression.regex());
     VerbalExpression regex = VerbalExpression.regex().find("http://").nonSpace().oneOrMore().build();
     regex.getText(mailMessage.text);
     return regex.getText(mailMessage.text);

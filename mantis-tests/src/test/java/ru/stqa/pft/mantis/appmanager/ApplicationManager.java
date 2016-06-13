@@ -1,6 +1,5 @@
 package ru.stqa.pft.mantis.appmanager;
 
-import org.apache.commons.exec.ExecuteWatchdog;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -23,6 +22,8 @@ public class ApplicationManager {
   private FtpHelper ftp;
   private MailHelper mailHelper;
   private ChangingPasswordHelper changingPasswordHelper;
+  private DbHelper dbHelper;
+
 
   public ApplicationManager(String browser) {
     this.browser = browser;
@@ -32,20 +33,22 @@ public class ApplicationManager {
   public void init() throws IOException {
     String target = System.getProperty("target", "local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target)))); //в методе init загружается только конфигурационный файл
+    dbHelper = new DbHelper();
   }
 
   public void stop() { // если драйвер останавливается в самом конце, но не был проинициализирован, поэтому stop() останов делаем с проверкой
     if (wd != null) {
-    wd.quit();
+      wd.quit();
     }
   }
 
   public HttpSession newSession() {
     return new HttpSession(this);
   }
- public String getProperty(String key) {
-   return properties.getProperty(key);
- }
+
+  public String getProperty(String key) {
+    return properties.getProperty(key);
+  }
 
 
   public RegistrationHelper registration() {
@@ -65,9 +68,9 @@ public class ApplicationManager {
   }
 
   public FtpHelper ftp() {
-  if (ftp == null) {
-    ftp = new FtpHelper(this);
-  }
+    if (ftp == null) {
+      ftp = new FtpHelper(this);
+    }
     return ftp;
   }
 
@@ -92,6 +95,10 @@ public class ApplicationManager {
       mailHelper = new MailHelper(this);
     }
     return mailHelper;
+  }
+
+  public DbHelper db() {
+    return dbHelper;
   }
 
 }
