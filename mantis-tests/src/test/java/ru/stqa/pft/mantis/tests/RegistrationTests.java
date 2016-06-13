@@ -19,19 +19,21 @@ import static ru.stqa.pft.mantis.tests.TestBase.app;
  */
 public class RegistrationTests extends TestBase {
 
-  @BeforeMethod
+  //@BeforeMethod
   public void startMailServer() {
     app.mail().start();
   }
 
   @Test
-  public void testRegistration() throws InterruptedException, MessagingException, IOException {
+  public void testRegistration() throws MessagingException, IOException {
     long now = System.currentTimeMillis();
     String user = String.format("user%s", now);
     String password = "password";
     String email = String.format("user%s@localhost.localdomain", now);
+    app.james().createUser(user, password);
     app.registration().start(user, email);
-    List<MailMessage> mailMessages = app.mail().waitForMail(2, 50000);
+ //   List<MailMessage> mailMessages = app.mail().waitForMail(2, 50000);
+    List<MailMessage> mailMessages = app.james().waitForMail(user, password, 60000);
     String confirmationLink = findConfirmationLink(mailMessages, email);
     app.registration().finish(confirmationLink, password);
     assertTrue(app.newSession().login(user, password));
@@ -44,7 +46,7 @@ public class RegistrationTests extends TestBase {
     return regex.getText(mailMessage.text);
   }
 
-  @AfterMethod (alwaysRun = true)
+ // @AfterMethod (alwaysRun = true)
   public void stopMailserver(){
     app.mail().stop();
   }

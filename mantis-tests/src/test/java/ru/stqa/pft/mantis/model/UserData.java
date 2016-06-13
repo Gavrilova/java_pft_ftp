@@ -29,7 +29,11 @@ public class UserData {
   @Column(name = "email")
   // @Type(type = "varchar")
   private String email;
-
+/*
+@Column (name = "access_level")
+@Type(type = "integer")
+private int access_level
+ */
 
   public UserData withId(int id) {
     this.id = id;
