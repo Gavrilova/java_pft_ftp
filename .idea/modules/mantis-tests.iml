@@ -64,5 +64,13 @@
     <orderEntry type="library" name="Gradle: com.google.code.gson:gson:2.6.2" level="project" />
     <orderEntry type="library" name="Gradle: xmlpull:xmlpull:1.1.3.1" level="project" />
     <orderEntry type="library" name="Gradle: xpp3:xpp3_min:1.1.4c" level="project" />
+    <orderEntry type="library" name="Gradle: biz.futureware.mantis:mantis-axis-soap-client:1.2.19" level="project" />
+    <orderEntry type="library" name="Gradle: axis:axis:1.4" level="project" />
+    <orderEntry type="library" name="Gradle: axis:axis-jaxrpc:1.4" level="project" />
+    <orderEntry type="library" name="Gradle: axis:axis-saaj:1.4" level="project" />
+    <orderEntry type="library" name="Gradle: axis:axis-wsdl4j:1.5.1" level="project" />
+    <orderEntry type="library" name="Gradle: commons-discovery:commons-discovery:0.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.axis:axis-jaxrpc:1.4" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.axis:axis-saaj:1.4" level="project" />
   </component>
 </module>
