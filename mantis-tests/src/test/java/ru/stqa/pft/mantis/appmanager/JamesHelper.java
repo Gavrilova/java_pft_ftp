@@ -79,7 +79,6 @@ public class JamesHelper {
     write(login);
     readUntil("Password:");
     write(password);
-
     //read welcome message
     readUntil("Welcome " + login + ". HELP for list of commands");
   }
