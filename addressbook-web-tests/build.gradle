@@ -31,7 +31,6 @@ task testGroups(type: Test) {
     if (project.hasProperty('verifyUI')) {
         systemProperty 'verifyUI', "${verifyUI}"
     }
-    systemProperty "file.encoding", "utf-8"
 }
 task testContacts(type: Test) {
     useTestNG {
@@ -46,14 +45,4 @@ task testContacts(type: Test) {
     if (project.hasProperty('verifyUI')) {
         systemProperty 'verifyUI', "${verifyUI}"
     }
-    systemProperty "file.encoding", "utf-8"
-}
-
-test {
-    useTestNG()
-    systemProperty "file.encoding", "utf-8"
-}
-
-task.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
 }
