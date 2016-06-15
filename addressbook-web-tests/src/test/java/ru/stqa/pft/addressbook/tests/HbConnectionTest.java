@@ -19,8 +19,7 @@ public class HbConnectionTest {
 
   private SessionFactory sessionFactory;
 
-  // @ManyToMany(fetch = FetchType.EAGER) про ленивую и жадную загрузку связей, указать в аннотации к полю groups
-
+  // @ManyToMany(fetch = FetchType.EAGER)
   @BeforeClass
   protected void setUp() throws Exception {
     // A SessionFactory is set up once for an application!
