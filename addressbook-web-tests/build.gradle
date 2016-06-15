@@ -48,6 +48,6 @@ task testContacts(type: Test) {
 }
 
 test {
-    useTestNG
+    useTestNG()
     systemProperty "file.encoding", "utf-8"
 }
