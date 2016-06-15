@@ -1,3 +1,5 @@
+import javax.tools.JavaCompiler
+
 apply plugin: 'java'
 
 
@@ -50,4 +52,8 @@ task testContacts(type: Test) {
 test {
     useTestNG()
     systemProperty "file.encoding", "utf-8"
+}
+
+task.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
