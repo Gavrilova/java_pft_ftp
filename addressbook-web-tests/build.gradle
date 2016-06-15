@@ -46,3 +46,8 @@ task testContacts(type: Test) {
     }
     systemProperty "file.encoding", "utf-8"
 }
+
+test {
+    useTestNG
+    systemProperty "file.encoding", "utf-8"
+}
