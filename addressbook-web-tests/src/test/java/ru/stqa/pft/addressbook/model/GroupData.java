@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @XStreamAlias("group")
-@Entity //Объявляет класс GroupData привязанной к базе
+@Entity
 @Table (name = "group_list")
 
 public class GroupData {
@@ -35,7 +35,7 @@ public class GroupData {
   @Type(type = "text")
   private String footer;
 
-  @ManyToMany (fetch = FetchType.EAGER , mappedBy = "groups") // в парном класе ContactData нужно взять аттрибут groups и оттуда взять описание того, как организована связь между объектами
+  @ManyToMany (fetch = FetchType.EAGER , mappedBy = "groups")
   private Set<ContactData> contacts = new HashSet<ContactData>();
 
   public Contacts getContacts() {

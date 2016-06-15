@@ -104,7 +104,7 @@ public class ContactData {
   @Expose
   private String photo = "";
 
-  @ManyToMany (fetch = FetchType.EAGER ) //из базы данных будет извлекаться как можно больше информации за один заход
+  @ManyToMany (fetch = FetchType.EAGER )
   @JoinTable (name = "address_in_groups",
           joinColumns = @JoinColumn(name = "id"),
           inverseJoinColumns = @JoinColumn (name = "group_id"))
@@ -334,7 +334,7 @@ public class ContactData {
 
   public Groups getGroups() {
     return new Groups(groups);
-  } //множество превращается в объект типа Groups, при этом создается копия
+  }
 
   @Override
   public String toString() {
